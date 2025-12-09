@@ -17,7 +17,7 @@ function Preloader() {
           <div className="h-10 w-10 rounded-full bg-white/10" />
           <div className="absolute inset-0 animate-ping rounded-full border border-deep-red/40" />
         </div>
-        <p className="text-[0.75rem] tracking-[0.3em] text-slate-500 uppercase">Charis Eagle Group</p>
+        <p className="text-[0.75rem] tracking-[0.3em] text-slate-500 uppercase">Charis Eagles Group</p>
       </div>
     </div>
   );

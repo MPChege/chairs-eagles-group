@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'deep-red': '#C00000',
-        'royal-blue': '#0033AA'
+        'deep-red': '#ff1b39',
+        'royal-blue': '#1bb7ff'
       },
       fontFamily: {
         heading: ['Montserrat', 'system-ui', 'sans-serif'],

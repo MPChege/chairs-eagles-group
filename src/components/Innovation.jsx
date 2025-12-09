@@ -23,10 +23,13 @@ function Innovation() {
             </p>
           </div>
           <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-slate-50 shadow-soft-lg">
-            <div className="pointer-events-none absolute inset-0 opacity-50" style={{
-              backgroundImage:
-                'radial-gradient(circle at 0 0, rgba(192,0,0,0.5), transparent 55%), radial-gradient(circle at 100% 100%, rgba(0,51,170,0.5), transparent 55%)',
-            }} />
+            <div
+              className="pointer-events-none absolute inset-0 opacity-50"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 0 0, rgba(255,27,57,0.5), transparent 55%), radial-gradient(circle at 100% 100%, rgba(27,183,255,0.5), transparent 55%)',
+              }}
+            />
             <div className="relative space-y-4">
               <div className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[0.7rem] font-medium tracking-[0.24em] uppercase">
                 Live Monitoring Stack

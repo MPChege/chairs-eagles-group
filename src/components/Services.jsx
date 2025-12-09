@@ -31,7 +31,7 @@ function Services() {
                 <p className="text-sm leading-relaxed text-slate-600">{service.description}</p>
               </div>
               <div className="mt-4 text-[0.7rem] font-medium uppercase tracking-[0.25em] text-slate-500">
-                Designed &amp; Delivered by Charis Eagle
+                Designed &amp; Delivered by Charis Eagles Group
               </div>
             </article>
           ))}

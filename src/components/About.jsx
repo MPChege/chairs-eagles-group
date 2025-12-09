@@ -17,7 +17,7 @@ function About() {
             Precision security, delivered with quiet confidence.
           </h2>
           <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-            Charis Eagle Group Ltd provides premium private security solutions for executives,
+            Charis Eagles Group Ltd provides premium private security solutions for executives,
             enterprises, and high‑value events across Kenya. Our teams blend field experience,
             intelligence‑led planning, and modern technology to maintain a calm, controlled
             environment wherever our clients operate.

@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRevealSection } from '../hooks/useRevealSection.js';
 import guardPortrait from '../assets/images/portrait-male-security-guard-with-uniform.jpg';
 import driverImage from '../assets/images/elegant-uber-driver-giving-taxi-ride.jpg';
 import workspaceImage from '../assets/images/security-guards-workspace.jpg';
 
+const frames = [
+  {
+    id: 'executive',
+    image: guardPortrait,
+    label: 'Executive & VIP Protection',
+    detail: 'Discreet close‑protection details for high‑profile leaders and guests.',
+  },
+  {
+    id: 'transport',
+    image: driverImage,
+    label: 'Secure Transport & Arrivals',
+    detail: 'Planned routes, secure transfers, and controlled arrival zones.',
+  },
+  {
+    id: 'operations',
+    image: workspaceImage,
+    label: 'Operations & Monitoring',
+    detail: 'Quiet, always‑on monitoring backing every assignment in the field.',
+  },
+];
+
 function Hero() {
   const sectionRef = useRevealSection();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % frames.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section
@@ -13,7 +42,7 @@ function Hero() {
       ref={sectionRef}
       className="reveal-section relative overflow-hidden bg-slate-50 pt-24 pb-20 text-slate-900"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(192,0,0,0.06),transparent_55%),radial-gradient(circle_at_bottom,_rgba(0,51,170,0.06),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,27,57,0.06),transparent_55%),radial-gradient(circle_at_bottom,_rgba(27,183,255,0.08),transparent_55%)]" />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-center">
         {/* Left: copy */}
@@ -55,32 +84,39 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right: static image collage */}
+        {/* Right: rotating image panel */}
         <div className="order-1 flex-1 md:order-2">
-          <div className="grid gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-900 shadow-soft-lg">
-                <img
-                  src={guardPortrait}
-                  alt="Executive security guard"
-                  className="h-full w-full object-cover"
-                />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-slate-900 shadow-soft-lg">
+            {frames.map((frame, index) => (
+              <img
+                key={frame.id}
+                src={frame.image}
+                alt={frame.label}
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                  index === activeIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-slate-900/0" />
+            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs text-slate-200">
+              <div>
+                <p className="text-[0.7rem] uppercase tracking-[0.3em] text-slate-400">
+                  Charis Eagles Group
+                </p>
+                <p className="text-sm font-medium">{frames[activeIndex].label}</p>
               </div>
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-900 shadow-soft-lg">
-                <img
-                  src={driverImage}
-                  alt="Secure transport driver"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-slate-900 shadow-soft-lg">
-              <div className="aspect-[5/3]">
-                <img
-                  src={workspaceImage}
-                  alt="Security operations workspace"
-                  className="h-full w-full object-cover"
-                />
+              <div className="flex gap-1.5">
+                {frames.map((frame, index) => (
+                  <button
+                    key={frame.id}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-1.5 rounded-full transition-all ${
+                      index === activeIndex ? 'w-6 bg-white' : 'w-2 bg-white/40'
+                    }`}
+                    aria-label={frame.label}
+                  />
+                ))}
               </div>
             </div>
           </div>
