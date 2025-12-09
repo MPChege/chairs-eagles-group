@@ -1,44 +1,31 @@
 import React from 'react';
+import { values } from '../data/values.js';
+import { useRevealSection } from '../hooks/useRevealSection.js';
 
 function Values() {
+  const sectionRef = useRevealSection();
   return (
-    <section id="values" className="section values-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-label">CORE VALUES</span>
-          <h2 className="section-title">The Foundation of Excellence</h2>
+    <section ref={sectionRef} id="values" className="reveal-section bg-white py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-10 space-y-3 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-deep-red">Core Values</p>
+          <h2 className="font-heading text-3xl font-bold text-slate-900 md:text-4xl">
+            Principles that anchor every assignment.
+          </h2>
         </div>
-        <div className="values-grid" id="values-grid">
-          <div className="value-card">
-            <div className="value-icon">01</div>
-            <h3>Integrity</h3>
-            <p>Uncompromising honesty and ethical conduct in every interaction and decision we make.</p>
-          </div>
-          <div className="value-card">
-            <div className="value-icon">02</div>
-            <h3>Leadership</h3>
-            <p>Setting industry standards through innovation, expertise, and forward-thinking strategies.</p>
-          </div>
-          <div className="value-card">
-            <div className="value-icon">03</div>
-            <h3>Customer Focus</h3>
-            <p>Placing our clients&apos; needs at the center of everything we do, delivering personalized solutions.</p>
-          </div>
-          <div className="value-card">
-            <div className="value-icon">04</div>
-            <h3>Innovation</h3>
-            <p>Embracing cutting-edge technology and methodologies to stay ahead of evolving security challenges.</p>
-          </div>
-          <div className="value-card">
-            <div className="value-icon">05</div>
-            <h3>Teamwork</h3>
-            <p>Collaborative excellence through seamless coordination and mutual respect among our team members.</p>
-          </div>
-          <div className="value-card">
-            <div className="value-icon">06</div>
-            <h3>Growth</h3>
-            <p>Continuous improvement and expansion of our capabilities to serve clients better every day.</p>
-          </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {values.map((value) => (
+            <article
+              key={value.title}
+              className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/80 p-6 shadow-sm"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-deep-red/5 via-transparent to-royal-blue/5" />
+              <div className="relative space-y-3">
+                <h3 className="font-heading text-lg font-semibold text-slate-900">{value.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{value.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

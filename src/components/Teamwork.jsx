@@ -1,34 +1,38 @@
 import React from 'react';
+import { useRevealSection } from '../hooks/useRevealSection.js';
 
 function Teamwork() {
+  const sectionRef = useRevealSection();
   return (
-    <section id="strategy" className="section strategy-section">
-      <div className="container">
-        <div className="strategy-content">
-          <div className="strategy-text">
-            <span className="section-label">STRATEGY</span>
-            <h2 className="section-title">Our Strategic Approach</h2>
-            <p>
-              At Charis Eagle Group Ltd, our strategy is built on four pillars: Research,
-              Innovation, Teamwork, and Growth. We continuously invest in understanding
-              emerging security threats, developing innovative solutions, fostering
-              collaborative excellence, and expanding our capabilities to provide unmatched
-              protection services.
-            </p>
-            <p>
-              Our research-driven approach ensures we stay ahead of potential risks, while our
-              commitment to innovation allows us to leverage the latest technologies. Through
-              teamwork, we create seamless security operations, and our focus on growth
-              enables us to scale our services to meet the evolving needs of our clients.
+    <section ref={sectionRef} id="teamwork" className="reveal-section bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-10 space-y-3 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-deep-red">Strategy</p>
+          <h2 className="font-heading text-3xl font-bold text-slate-900 md:text-4xl">
+            Built around teamwork, growth, and clear leadership.
+          </h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 className="font-heading text-lg font-semibold text-slate-900">Research</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              We constantly review incident patterns, client feedback, and regional security reports
+              to refine our procedures.
             </p>
           </div>
-          <div className="strategy-visual">
-            <div className="strategy-circle" id="strategy-circle">
-              <div className="strategy-item">Research</div>
-              <div className="strategy-item">Innovation</div>
-              <div className="strategy-item">Teamwork</div>
-              <div className="strategy-item">Growth</div>
-            </div>
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 className="font-heading text-lg font-semibold text-slate-900">People &amp; Training</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Teams are trained to operate as a cohesive unit, rehearsing scenarios so that real
+              deployments feel calm and controlled.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 className="font-heading text-lg font-semibold text-slate-900">Growth Mindset</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Every operation is reviewed so we can adapt, improve, and scale our capabilities with
+              our clients.
+            </p>
           </div>
         </div>
       </div>

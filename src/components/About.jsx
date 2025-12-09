@@ -1,65 +1,51 @@
 import React from 'react';
+import { useRevealSection } from '../hooks/useRevealSection.js';
 
 function About() {
+  const sectionRef = useRevealSection();
+  const image1 =
+    'https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0';
+  const image2 =
+    'https://images.unsplash.com/photo-1485230405346-71acb9518d9c?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.1.0';
+
   return (
-    <section id="about" className="section about-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-label">ABOUT US</span>
-          <h2 className="section-title">Excellence in Security Solutions</h2>
+    <section ref={sectionRef} id="about" className="reveal-section bg-white py-20">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row">
+        <div className="flex-1 space-y-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-deep-red">About Us</p>
+          <h2 className="font-heading text-3xl font-bold text-slate-900 md:text-4xl">
+            Precision security, delivered with quiet confidence.
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+            Charis Eagle Group Ltd provides premium private security solutions for executives,
+            enterprises, and high‑value events across Kenya. Our teams blend field experience,
+            intelligence‑led planning, and modern technology to maintain a calm, controlled
+            environment wherever our clients operate.
+          </p>
+          <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+            From executive details and residential protection to large‑scale event security, we
+            operate with absolute discretion, disciplined readiness, and an unwavering commitment to
+            your safety.
+          </p>
         </div>
-        <div className="about-grid">
-          <div className="about-card">
-            <div className="about-image-wrapper">
+        <div className="flex-1 space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 shadow-soft-lg">
               <img
-                src="https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Professional Security Guards"
-                className="about-image"
+                src={image1}
+                alt="Security officer monitoring surveillance"
+                className="h-full w-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="about-icon">01</div>
-            <h3>Company Profile</h3>
-            <p>
-              Charis Eagle Group Ltd stands as a premier private security firm, delivering
-              unparalleled protection services across Kenya and beyond. With a foundation
-              built on integrity, innovation, and unwavering commitment, we safeguard what
-              matters most to our clients.
-            </p>
-          </div>
-          <div className="about-card">
-            <div className="about-image-wrapper">
+            <div className="mt-8 aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 shadow-soft-lg">
               <img
-                src="https://images.unsplash.com/photo-1485230405346-71acb9518d9c?q=80&w=2388&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Executive Protection Services"
-                className="about-image"
+                src={image2}
+                alt="Executive protection detail"
+                className="h-full w-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="about-icon">02</div>
-            <h3>Our Vision</h3>
-            <p>
-              To be Africa&apos;s most trusted and innovative security partner, setting the gold
-              standard for excellence in private protection services while maintaining the
-              highest levels of professionalism and reliability.
-            </p>
-          </div>
-          <div className="about-card">
-            <div className="about-image-wrapper">
-              <img
-                src="/images/security-team.jpg"
-                alt="Security Team"
-                className="about-image"
-                loading="lazy"
-              />
-            </div>
-            <div className="about-icon">03</div>
-            <h3>Our Mission</h3>
-            <p>
-              To provide world-class security solutions that exceed expectations, ensuring the
-              safety and peace of mind of our clients through cutting-edge technology, highly
-              trained personnel, and strategic excellence.
-            </p>
           </div>
         </div>
       </div>

@@ -1,44 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap';
 
-function Preloader({ onComplete }) {
-  const [progress, setProgress] = useState(0);
+function Preloader() {
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      current += Math.random() * 20;
-      if (current >= 100) {
-        current = 100;
-        clearInterval(interval);
-        gsap.to('#preloader', {
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power2.inOut',
-          onComplete: () => {
-            onComplete?.();
-          },
-        });
-      }
-      setProgress(current);
-    }, 150);
+    const timer = setTimeout(() => setDone(true), 1600);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [onComplete]);
+  if (done) return null;
 
   return (
-    <div id="preloader" className="preloader">
-      <div className="preloader-content">
-        <div className="preloader-logo">
-          <div className="shield-icon" />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+      <div className="flex flex-col items-center gap-4">
+        <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-deep-red to-royal-blue shadow-soft-lg">
+          <div className="h-10 w-10 rounded-full bg-white/10" />
+          <div className="absolute inset-0 animate-ping rounded-full border border-deep-red/40" />
         </div>
-        <div className="preloader-text">CHARIS EAGLE GROUP</div>
-        <div className="preloader-progress">
-          <div
-            className="preloader-progress-bar"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+        <p className="text-[0.75rem] tracking-[0.3em] text-slate-500 uppercase">Charis Eagle Group</p>
       </div>
     </div>
   );
