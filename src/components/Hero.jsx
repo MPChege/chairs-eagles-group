@@ -30,9 +30,6 @@ function Hero() {
               Executive protection, corporate guarding, and high‑fidelity event security designed
               for leaders, brands, and critical assets across Kenya.
             </p>
-            <p className="max-w-xl text-sm font-medium text-slate-700 md:text-sm">
-              <span className="font-semibold text-deep-red">Now viewing:</span> {activeFrame.detail}
-            </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <a
