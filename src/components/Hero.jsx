@@ -63,7 +63,7 @@ function Hero() {
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="#event-designer"
-              className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-deep-red to-royal-blue px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-soft-lg transition hover:translate-y-[1px] hover:shadow-lg"
+              className="inline-flex items-center gap-3 rounded-full bg-deep-red px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-soft-lg transition hover:bg-[#ff3350] active:bg-royal-blue"
             >
               <span>Design My Security Plan</span>
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15">

@@ -45,11 +45,12 @@ function Navbar() {
           <button
             type="button"
             onClick={toggle}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm hover:border-deep-red/60 hover:text-deep-red md:hidden"
+            className="inline-flex h-9 w-9 flex-col items-center justify-center rounded-full border border-deep-red/40 bg-white text-deep-red shadow-sm md:hidden"
             aria-label="Open navigation"
           >
-            <span className="block h-[2px] w-4 rounded bg-current" />
-            <span className="mt-[3px] block h-[2px] w-3 rounded bg-current" />
+            <span className="block h-[2px] w-4 rounded-full bg-current" />
+            <span className="mt-1 block h-[2px] w-4 rounded-full bg-current" />
+            <span className="mt-1 block h-[2px] w-4 rounded-full bg-current" />
           </button>
         </div>
       </header>

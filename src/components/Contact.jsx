@@ -62,7 +62,7 @@ function Contact() {
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-deep-red to-royal-blue px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-soft-lg transition hover:translate-y-[1px] hover:shadow-lg"
+              className="inline-flex w-full items-center justify-center rounded-full bg-deep-red px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-soft-lg transition hover:bg-[#ff3350] active:bg-royal-blue"
             >
               Submit Enquiry
             </button>
